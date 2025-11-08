@@ -53,15 +53,7 @@ composer require laravel/passport
 php artisan passport:install
 
 
-### 9. Add Passport's Service Provider
-'guards' => [
-    'api' => [
-        'driver' => 'passport',
-        'provider' => 'users',
-    ],
-],
-
-### 10. Run the migration with seeder
+### 9. Run the migration with seeder
 php artisan migrate:fresh --seed
 
 
