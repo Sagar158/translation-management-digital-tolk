@@ -26,15 +26,16 @@ This is a **Laravel-based API** for managing translations across multiple locale
 Clone the repository to your local machine and navigate into the project directory:
 
 git clone https://github.com/Sagar158/translation-management-digital-tolk.git
+### 2. Go to Project
 cd translation-management-digital-tolk.git
 
-### 2. Install Composer
+### 3. Install Composer
 composer install
 
-### 3. Set up the Environment File
+### 4. Set up the Environment File
 cp .env.example .env
 
-### 4. Configure Database
+### 5. Configure Database
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -42,17 +43,17 @@ DB_DATABASE=localhost
 DB_USERNAME=root
 DB_PASSWORD=
 
-### 5. Generate Application Key
+### 6. Generate Application Key
 php artisan key:generate
 
-### 6. Install Passport
+### 7. Install Passport
 composer require laravel/passport
 
-### 7. Run Passport Install Command
+### 8. Run Passport Install Command
 php artisan passport:install
 
 
-### 8. Add Passport's Service Provider
+### 9. Add Passport's Service Provider
 'guards' => [
     'api' => [
         'driver' => 'passport',
@@ -60,7 +61,7 @@ php artisan passport:install
     ],
 ],
 
-### 9. Run the migration with seeder
+### 10. Run the migration with seeder
 php artisan migrate:fresh --seed
 
 
