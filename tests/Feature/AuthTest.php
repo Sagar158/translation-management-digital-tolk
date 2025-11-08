@@ -8,22 +8,15 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AuthTest extends TestCase
 {
-    use RefreshDatabase;
+    // use RefreshDatabase;
 
     /** @test */
     public function user_can_login_with_valid_credentials()
     {
-        $user = User::create([
-            'name' => 'Test User',
-            'email' => 'testuser@example.com',
-            'password' => 'password',
-        ]);
-
         $response = $this->postJson('/api/login', [
             'email' => 'testuser@example.com',
             'password' => 'password',
         ]);
-
         $response->assertStatus(200);
         $response->assertJsonStructure(['token']);
     }
@@ -31,12 +24,6 @@ class AuthTest extends TestCase
     /** @test */
     public function user_cannot_login_with_invalid_credentials()
     {
-        $user = User::create([
-            'name' => 'Test User',
-            'email' => 'testuser@example.com',
-            'password' => Hash::make('password'),
-        ]);
-
         $response = $this->postJson('/api/login', [
             'email' => 'testuser@example.com',
             'password' => 'wrongpassword',
