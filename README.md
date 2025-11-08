@@ -56,4 +56,3 @@ php artisan passport:install
 ### 9. Run the migration with seeder
 php artisan migrate:fresh --seed
 
-
